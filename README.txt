@@ -15,6 +15,21 @@ knows how to create Civ4-style FPK files).
 You can find PakBuild here: http://forums.civfanatics.com/showthread.php?t=136023
 And a tutorial on it here: http://forums.civfanatics.com/showthread.php?t=297865
 
+Building - With AutoPak!
+------------------------
+
+Because the above workflow is a little sad, and because the PakBuild.exe tool
+supports command line options for building, I wrote a little script that I
+called "AutoPak". (autopak.vbs). It's included.
+
+To build, just run it. You need to be on Windows; it's in VBScript because that
+seemed better than Python for something that was going to be Windows-only anyway.
+
+AutoPak downloads PakBuild from CFC (so it doesn't need redistribution) and
+invokes it using the right command line options to fpk up everything in the
+current directory. The output file is FFPak0.fpk by default; for the art in
+this repository I recommend renaming the file to FFPak1.fpk.
+
 License:
 --------
 
