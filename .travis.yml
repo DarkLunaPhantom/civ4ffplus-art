@@ -4,7 +4,7 @@ before_install:
   - WINEARCH=win32 wineboot
 script:
   - wget http://www.civfanatics.net/downloads/civ4/utility/PakBuild.zip
-  - unzip PakBuild.exe
+  - unzip PakBuild.zip
   - wine PakBuild.exe /R=FFPak /X=".txt;.fpk_layout;.fpk;.vbs;.zip;.git;.travis.yml;.gitignore" /F
   - mv FFPak0.FPK FFPak1.fpk
 after_script:
