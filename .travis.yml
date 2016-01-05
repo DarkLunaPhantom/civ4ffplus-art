@@ -1,12 +1,14 @@
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get install -y wine unzip
+  - sudo apt-get install -y wine unzip openssl
   - WINEARCH=win32 wineboot
 script:
   - wget http://www.civfanatics.net/downloads/civ4/utility/PakBuild.zip
   - unzip PakBuild.zip
-  - wine PakBuild.exe /R=FFPak /X=".txt;.fpk_layout;.fpk;.vbs;.zip;.git;.travis.yml;.gitignore" /F
+  - wine PakBuild.exe /R=FFPak /X=".txt;.fpk_layout;.fpk;.vbs;.zip;.git;.travis.yml;.gitignore;.enc" /F
   - mv FFPak0.FPK FFPak1.fpk
-after_script:
-  - rm PakBuild.exe
-  - rm PakBuild.zip
+after_success:
+  - openssl aes-256-cbc -K $encrypted_47ef7aaac6f2_key -iv $encrypted_47ef7aaac6f2_iv -in id_rsa.enc -out .ssh/id_rsa -d
+  - chmod 0600 ~/.ssh/id_rsa
+  - echo -e "Host mars.arosser.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - scp -i ~/.ssh/id_rsa FFPak1.fpk ffplus@mars.arosser.com:/srv/http/files/ffplus/
