@@ -5,7 +5,7 @@ before_install:
 script:
   - wget http://www.civfanatics.net/downloads/civ4/utility/PakBuild.zip
   - unzip PakBuild.exe
-  - wine PakBuild.exe /R=FFPak /X=".txt;.fpk_layout;.fpk;.vbs;.zip;.git;.travis-ci.yml;.gitignore" /F
+  - wine PakBuild.exe /R=FFPak /X=".txt;.fpk_layout;.fpk;.vbs;.zip;.git;.travis.yml;.gitignore" /F
   - mv FFPak0.FPK FFPak1.fpk
 after_script:
   - rm PakBuild.exe
