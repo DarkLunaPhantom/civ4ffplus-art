@@ -1,7 +1,7 @@
 before_install:
-  - sudo dpkg --add-architecture i386 
   - sudo apt-get update -qq
-  - sudo apt-get install -y wine wine32 unzip
+  - sudo apt-get install -y wine unzip
+  - WINEARCH=win32 wineboot
 script:
   - wget http://www.civfanatics.net/downloads/civ4/utility/PakBuild.zip
   - unzip PakBuild.exe
