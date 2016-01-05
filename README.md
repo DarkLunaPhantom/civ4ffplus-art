@@ -1,11 +1,11 @@
-# Final Frontier Plus Art Assets [![Build Status](https://travis-ci.org/FinalFrontierPlus/civ4ffplus-art.svg?branch=master)]
+# Final Frontier Plus Art Assets [![Build Status](https://travis-ci.org/FinalFrontierPlus/civ4ffplus-art.svg?branch=master)](https://travis-ci.org/FinalFrontierPlus/civ4ffplus-art)
 
 This repo contains the art assets for the Final Frontier Plus project.
 
 Why are they in version control? Perhaps they shouldn't be, but I don't know
 of a better way to organize them.
 
-# Building:
+## Building:
 
 For best results, you should use Firaxis's PakBuild (or another program which
 knows how to create Civ4-style FPK files).
@@ -13,7 +13,7 @@ knows how to create Civ4-style FPK files).
 You can find PakBuild here: http://forums.civfanatics.com/showthread.php?t=136023
 And a tutorial on it here: http://forums.civfanatics.com/showthread.php?t=297865
 
-# Building - With AutoPak!
+### Building - With AutoPak!
 
 Because the above workflow is a little sad, and because the PakBuild.exe tool
 supports command line options for building, I wrote a little script that I
@@ -27,20 +27,20 @@ invokes it using the right command line options to fpk up everything in the
 current directory. The output file is FFPak0.fpk by default; for the art in
 this repository I recommend renaming the file to FFPak1.fpk.
 
-# Travis CI!
+## Travis CI!
 
 The above workflow has been made even better; if you just want to get a FFPak
 that currently has everything in git master, you can use the [following link](https://mars.arosser.com/files/ffplus/FFPak1.fpk).
 This file is automatically built using PakBuild.exe, wine, and Travis CI.
 
-# Contributing
+## Contributing
 
 We'd love for you to contribute art. If you're submitting art, please also
 either tell us what it's for, or (even better) submit a pull request against
 the [main repository](civ4ffplus) with updated art define XML to use your
 new art. Otherwise there isn't much point in collecting it here.
 
-# License:
+## License:
 
 Final Frontier Plus is as "open source" as a mod of a proprietary video game
 can get. In a nutshell that means you are welcome to use any assets (code,
