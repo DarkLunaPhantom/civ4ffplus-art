@@ -1,0 +1,12 @@
+before_install:
+  - sudo dpkg --add-architecture i386 
+  - sudo apt-get update -qq
+  - sudo apt-get install -y wine wine32 unzip
+script:
+  - wget http://www.civfanatics.net/downloads/civ4/utility/PakBuild.zip
+  - unzip PakBuild.exe
+  - wine PakBuild.exe /R=FFPak /X=".txt;.fpk_layout;.fpk;.vbs;.zip;.git;.travis-ci.yml;.gitignore" /F
+  - mv FFPak0.FPK FFPak1.fpk
+after_script:
+  - rm PakBuild.exe
+  - rm PakBuild.zip
